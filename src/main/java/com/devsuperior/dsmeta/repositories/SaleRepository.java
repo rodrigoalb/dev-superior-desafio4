@@ -27,24 +27,5 @@ public interface SaleRepository extends JpaRepository<Sale, Long> {
 		List<SellerMinDto> findByProjection2(
 				@Param("minDate") LocalDate minDate,
 		        @Param("maxDate") LocalDate maxDate);
-
-	
-//	@Query(nativeQuery = true, value = "SELECT s.id, s.date, s.amount, sel.name AS sellerName\r\n"
-//			+ "FROM tb_sales s\r\n"
-//			+ "INNER JOIN tb_seller sel ON s.seller_id = sel.id\r\n"
-//			+ "WHERE s.date BETWEEN DATE '2022-05-01' AND DATE '2022-05-31' AND UPPER(sel.name) LIKE '%ODINSON%'\r\n"
-//			+ "")
-//	List<SaleMinProjetion2> findByDateBetweenAndSellerName(LocalDate minDate, LocalDate maxDate, String sellerName);
-//	
-//
-//	@Query(nativeQuery = true, value = "SELECT s.seller_id, sel.name AS sellerName, SUM(s.amount) AS totalAmount\r\n"
-//			+ "FROM tb_sales s\r\n"
-//			+ "INNER JOIN tb_seller sel ON s.seller_id = sel.id\r\n"
-//			+ "WHERE s.date BETWEEN :minDate AND :maxDate\r\n"
-//			+ "GROUP BY s.seller_id, sel.name\r\n"
-//			+ "")
-//	List<SaleMinProjection> findByProjection( 
-//			@Param("minDate") LocalDate minDate,
-//	        @Param("maxDate") LocalDate maxDate);
 }
 
